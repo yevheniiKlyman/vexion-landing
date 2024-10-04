@@ -1,26 +1,20 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@@/*": ["./*"],
-    },
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ESNext", "DOM"],
-    "moduleResolution": "Node",
-    "strict": true,
-    "sourceMap": true,
+    "target": "es2021",
+    "module": "es2022",
+    "jsx": "react",
     "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "node"],
+    "noImplicitAny": true,
+    "allowJs": true,
+    "checkJs": false,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "outDir": "dist/assets/scripts",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["src"],
-  "exclude": ["**/*.test.ts", "node_modules", "test/**", ".history/**"],
+  "include": ["src/**/*"],
+  "exclude": ["dist", "node_modules"]
 }

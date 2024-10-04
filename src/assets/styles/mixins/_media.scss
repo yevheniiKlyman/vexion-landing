@@ -1,0 +1,60 @@
+@use 'sass:map';
+
+@function translate-media-condition($c) {
+  $condMap: (
+    'hover': '(pointer: fine)',
+    '>1367': '(min-width: 1367px)',
+    '<1366': '(max-width: 1366px)',
+    '>1024': '(min-width: 1024px)',
+    '<1023': '(max-width: 1023px)',
+    '>768': '(min-width: 768px)',
+    '<767': '(max-width: 767px)',
+    '>xs': '(min-width: 375px)',
+    '<xs': '(max-width: 374px)',
+  );
+  @return map.get($condMap, $c);
+}
+
+@mixin media($args...) {
+  $query: '';
+  @each $arg in $args {
+    $op: '';
+    @if ($query != '') {
+      $op: ' and ';
+    }
+    $query: $query + $op + translate-media-condition($arg);
+  }
+  @media #{$query} {
+    @content;
+  }
+}
+
+@mixin mediaD {
+  @include media('>1024') {
+    @content;
+  }
+}
+
+@mixin mediaTD {
+  @include media('>768') {
+    @content;
+  }
+}
+
+@mixin mediaT {
+  @include media('>768', '<1023') {
+    @content;
+  }
+}
+
+@mixin mediaMT {
+  @include media('<1023') {
+    @content;
+  }
+}
+
+@mixin mediaM {
+  @include media('<767') {
+    @content;
+  }
+}

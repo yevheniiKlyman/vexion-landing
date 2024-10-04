@@ -1,0 +1,72 @@
+header {
+  position: sticky;
+  top: 0;
+  background-color: $color-grey95;
+  padding: 20px 0;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 145px 1fr 230px;
+  align-items: center;
+  column-gap: 10px;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 34px;
+      height: 34px;
+      fill: $color-white;
+      margin-inline-end: 12px;
+    }
+
+    span {
+      font-size: 29px;
+      font-weight: 600;
+    }
+  }
+
+  .navbar {
+    justify-self: center;
+  }
+
+  .nav-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    column-gap: 40px;
+    list-style: none;
+  }
+
+  .nav-item {
+    font-size: 16px;
+    color: $color-grey50;
+    transition: color 0.3s;
+    cursor: pointer;
+
+    @include hover {
+      color: $color-white;
+    }
+
+    &.bottom-arrow {
+      position: relative;
+      padding-inline-end: 20px;
+
+      @include icon-arrow(bottom, 8px, 2px) {
+        position: absolute;
+        top: 2px;
+        inset-inline-end: 0;
+      }
+    }
+  }
+
+  .user-info {
+    justify-self: end;
+  }
+
+  .btn:nth-child(2) {
+    margin-inline-start: 14px;
+  }
+}
