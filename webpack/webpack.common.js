@@ -110,6 +110,7 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: isDev,
+              api: 'modern',
             },
           },
         ],
