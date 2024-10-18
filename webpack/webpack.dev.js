@@ -17,6 +17,7 @@ module.exports = merge(commonConfig, {
       overlay: {
         errors: false,
         warnings: false,
+        runtimeErrors: false,
       },
     },
     // to test in other devices:

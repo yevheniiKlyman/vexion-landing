@@ -1,0 +1,133 @@
+.app-info-2 {
+  margin-top: 149px;
+  padding: 0 84px;
+
+  .slider-container {
+    position: relative;
+    display: flex;
+    padding-bottom: 178px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
+      border-bottom: 1px solid $color-grey5;
+    }
+  }
+
+  .swiper2 {
+    width: calc(100% - 244px);
+    overflow: hidden;
+
+    &:not(.swiper-initialized) {
+      .swiper-slide:not(:first-child) {
+        display: none;
+      }
+    }   
+  }
+
+  .swiper2-thumbs {
+    display: flex;
+    align-items: end;
+    height: 500px;
+    width: 244px;
+    padding-bottom: 24px;
+
+    .swiper-wrapper {
+      height: 424px;
+      flex-direction: column;
+    }
+
+    .swiper-slide {
+      position: relative;
+      padding-inline-start: 30px;
+      color: $color-grey50;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset-inline-start: 0;
+        top: 0;
+        display: block;
+        width: 6px;
+        height: 109px;
+        border-radius: 5px;
+        opacity: 0.35;
+        background-color: #3b3b44;
+      }
+
+      &:first-child {
+        height: 139px !important;
+      }
+
+      &:nth-child(2) {
+        height: 156px !important;
+      }
+
+      &:last-child {
+        height: 109px !important;
+      }
+
+      &.swiper-slide-thumb-active {
+        .thumb-title {
+          color: $color-white;
+        }
+
+        &::before {
+          background-color: $color-white;
+          box-shadow: 0 0 25px 0 #a097b4;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .thumb-title {
+    font-size: 24px;
+  }
+
+  .thumb-text {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  .swiper-slide {
+    .text-block {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      p {
+        font-size: 16px;
+        color: $color-grey50;
+        width: 340px;
+      }
+    }
+
+    .subtitle {
+      font-size: 24px;
+    }
+
+    .title {
+      font-size: 64px;
+      width: 530px;
+      margin: 16px 0 25px;
+    }
+
+    .btn {
+      margin-top: 172px;
+    }
+
+    .img-container {
+      position: absolute;
+      display: block;
+      top: 195px;
+      inset-inline-start: 355px;
+      padding-bottom: 40.87%;
+      height: 0;
+    }
+  }
+}
