@@ -1,6 +1,7 @@
 .pricing {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 150px;
 
   .container {
@@ -113,5 +114,12 @@
     &:not(.active) {
       color: $color-grey50;
     }
+  }
+
+  .img-container {
+    margin-top: -314px;
+    padding-bottom: 45.314%;
+    height: 0;
+    z-index: -1;
   }
 }
