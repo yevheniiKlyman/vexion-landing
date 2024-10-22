@@ -77,11 +77,13 @@ section,
 }
 
 .btn-dark {
+  position: relative;
   background-color: $color-black;
   color: $color-white;
   background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%),
     linear-gradient(0deg, $color-black, $color-black);
-  box-shadow: 0 1px 1px 0 rgba(230, 221, 254, 0.05), 0 -1px 1px 0 rgba(230, 221, 254, 0.4);
+  box-shadow: 0 10px 25px 0 #e6ddfe1a inset;
+  @include faded-border(30px);
 
   @include hover {
     background: linear-gradient(360deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.1) 100%),

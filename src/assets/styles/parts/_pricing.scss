@@ -1,0 +1,117 @@
+.pricing {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+  }
+
+  .title-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      font-size: 64px;
+      margin: 18px 0 23px;
+    }
+
+    p {
+      color: $color-grey50;
+    }
+  }
+
+  .subtitle {
+    font-size: 24px;
+  }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32px;
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  .pricing-card {
+    padding: 24px;
+
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    &.recomended {
+      position: relative;
+      background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%);
+      box-shadow: 0 10px 25px 0 #e6ddfe1a inset;
+      border-radius: 24px;
+      @include faded-border(24px, -1);
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    .title {
+      font-size: 18px;
+    }
+  }
+
+  .description {
+    color: $color-grey50;
+  }
+
+  .price {
+    margin: 3px 0 15px;
+    font-size: 48px;
+
+    small {
+      font-size: 32px;
+    }
+  }
+
+  .annual-price {
+    margin: 24px 0 11px;
+    font-size: 14px;
+    color: $color-grey50;
+  }
+
+  .options {
+    position: relative;
+    list-style: none;
+    padding-top: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      inset-inline: 0;
+      border-top: 1px solid #8298ab;
+      opacity: 0.35;
+    }
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    margin: 17px 0;
+    font-size: 14px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      margin-inline-end: 10px;
+    }
+
+    &:not(.active) {
+      color: $color-grey50;
+    }
+  }
+}

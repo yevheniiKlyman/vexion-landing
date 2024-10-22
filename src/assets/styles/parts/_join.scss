@@ -1,0 +1,47 @@
+.join {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+
+  .container {
+    position: relative;
+    max-width: 944px;
+  }
+
+  .content {
+    position: absolute;
+    top: 47px;
+    inset-inline: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .btn {
+    font-size: 20px;
+    padding: 16px 33px;
+  }
+
+  .img-container {
+    border-radius: 25px;
+    overflow: hidden;
+    padding-bottom: 21.2%;
+    height: 0;
+  }
+
+  .btn-dark {
+    @include hover {
+      background: linear-gradient(360deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.25) 100%),
+        linear-gradient(0deg, $color-black, $color-black);
+    }
+  
+    &:active {
+      box-shadow: 0 -1px 1px 0 rgba(230, 221, 254, 0.2), 1px 1px 3px 2px rgba(230, 221, 254, 0.9);
+    }
+  }
+}
