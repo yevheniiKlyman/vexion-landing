@@ -46,21 +46,10 @@
   }
 
   .intro-img {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-image: url('@/assets/images/css-images/intro-bg.jpg');
-    background-repeat: no-repeat;
-    background-position: 50% -108%;
-    background-size: contain;
-    margin-top: 14px;
-
-    picture {
-      display: block;
-      padding-bottom: calc((min(1016px, 100% - 58px)) * 0.7166);
-      height: 0;
-      margin-inline-end: 58px;
-    }
+    height: 0;
+    padding-bottom: 54.38%;
+    margin-top: -126px;
+    z-index: -1;
 
     img {
       width: 100%;
@@ -71,7 +60,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 102px;
+    margin-top: 100px;
   }
 
   .partners-title {

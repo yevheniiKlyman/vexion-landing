@@ -11,15 +11,15 @@ header {
   grid-template-columns: 145px 1fr 230px;
   align-items: center;
   column-gap: 10px;
+  max-width: 1540px;
 
   .logo {
     display: flex;
     align-items: center;
 
-    svg {
+    img {
       width: 34px;
       height: 34px;
-      fill: $color-white;
       margin-inline-end: 12px;
     }
 

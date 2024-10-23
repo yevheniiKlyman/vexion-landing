@@ -1,8 +1,7 @@
 /// Faded-border mixin
 /// @param {Border radius} $direction - border-radius
-/// @param {Z-index} $size - z-index
 
-@mixin faded-border($radius: null, $z-index: null) {
+@mixin faded-border($radius: null) {
   &::before {
     content: '';
     position: absolute;
@@ -16,9 +15,6 @@
 
     @if $radius != null {
       border-radius: $radius;
-    }
-    @if $radius != null {
-      z-index: $z-index;
     }
 
     @content;
