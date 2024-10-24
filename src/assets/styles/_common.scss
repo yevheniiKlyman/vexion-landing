@@ -50,6 +50,11 @@ textarea {
   -webkit-text-size-adjust: 100%;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -124,4 +129,11 @@ section,
   background: radial-gradient(circle at top center, rgba(89, 53, 251, 0.35) 0%, rgba(248, 134, 63, 0.1) 65%),
     linear-gradient(0deg, $color-white, $color-white);
   background-clip: text;
+}
+
+.logo {
+  img {
+    border-radius: 50%;
+    box-shadow: 0 6.64px 33.18px 0 rgba(160, 151, 180, 0.4);
+  }
 }
