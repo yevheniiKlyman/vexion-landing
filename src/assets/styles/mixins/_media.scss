@@ -35,6 +35,18 @@
   }
 }
 
+@mixin mediaL {
+  @include media('>1024', '<1366') {
+    @content;
+  }
+}
+
+@mixin mediaTL {
+  @include media('>768', '<1366') {
+    @content;
+  }
+}
+
 @mixin mediaTD {
   @include media('>768') {
     @content;
@@ -47,6 +59,12 @@
   }
 }
 
+@mixin mediaML {
+  @include media('<1366') {
+    @content;
+  }
+}
+
 @mixin mediaMT {
   @include media('<1023') {
     @content;
@@ -55,6 +73,12 @@
 
 @mixin mediaM {
   @include media('<767') {
+    @content;
+  }
+}
+
+@mixin mediaXS {
+  @include media('<xs') {
     @content;
   }
 }

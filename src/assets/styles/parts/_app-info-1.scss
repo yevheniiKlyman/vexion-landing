@@ -12,7 +12,14 @@
     
     .title {
       margin: 15px 0 25px;
-      font-size: 64px;
+
+      @include mediaTD {
+        font-size: 64px;
+      }
+
+      @include mediaM {
+        font-size: 44px;
+      }
     }
 
     p {
@@ -33,14 +40,27 @@
 
   .slider-inner {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: minmax(297px, auto) minmax(73px, auto) minmax(297px, auto);
     gap: 16px;
-    grid-template-areas: 'first second fourth' 'first third fourth' 'first third fifth';
+
+    @include mediaD {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: minmax(297px, auto) minmax(73px, auto) minmax(297px, auto);
+      grid-template-areas: 'first second fourth' 'first third fourth' 'first third fifth';
+    }
+
+    @include mediaMT {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: 'first first' 'second fourth' 'third fifth';
+    }
   }
 
   .slider-item {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
     box-shadow: 0 10px 25px 0 #e6ddfe1a inset;
     background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%);
     background-color: $color-grey95;
@@ -67,12 +87,13 @@
       font-size: 14px;
     }
 
+    picture {
+      display: block;
+      height: 0;
+    }
+
     &:nth-child(3),
     &:nth-child(4) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
       .title {
         margin-bottom: 15px;
       }
@@ -80,6 +101,7 @@
 
     &:first-child {
       grid-area: first;
+      align-items: center;
 
       .title {
         font-size: 32px;
@@ -90,13 +112,35 @@
       }
 
       .img-container {
-        margin: -40px -24px -106px;
+        @include mediaD {
+          margin: -40px -24px -80px;
+        }
+        
+        @include mediaMT {
+          margin: -40px -24px -215px;
+          opacity: 0.6;
+        }
       }
 
       picture {
-        display: block;
-        padding-bottom: 146%;
-        height: 0;
+        @include mediaD {
+          padding-bottom: 145.2%;
+        }
+        
+        @include mediaMT {
+          padding-bottom: 77.93%;
+        }
+      }
+
+      img {
+        @include mediaD {
+          width: 100%;
+        }
+      }
+
+      .info {
+        position: relative;
+        top: -25px;
       }
 
       .btn-container {
@@ -113,9 +157,7 @@
       }
 
       picture {
-        display: block;
-        padding-bottom: 31.5%;
-        height: 0;
+        padding-bottom: 48.58%;
       }
 
       .text {
@@ -127,9 +169,7 @@
       grid-area: third;
 
       picture {
-        display: block;
-        padding-bottom: 36.5%;
-        height: 0;
+        padding-bottom: 53.72%;
       }
     }
 
@@ -137,9 +177,7 @@
       grid-area: fourth;
 
       picture {
-        display: block;
-        padding-bottom: 29.68%;
-        height: 0;
+        padding-bottom: 44.06%;
       }
     }
 
@@ -151,9 +189,7 @@
       }
 
       picture {
-        display: block;
-        padding-bottom: 35.7%;
-        height: 0;
+        padding-bottom: 60.9%;
       }
 
       .title {

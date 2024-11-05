@@ -6,13 +6,24 @@
 
   h1,
   h2 {
-    font-size: 80px;
+    @include mediaD {
+      font-size: 80px;
+    }
+
+    @include mediaT {
+      font-size: 60px;
+    }
+
+    @include mediaM {
+      font-size: 45px;
+    }
   }
 
   h1 {
     span {
       display: inline-block;
       vertical-align: top;
+      margin-inline-end: 5px;
       padding-top: 9px;
       font-size: 42px;
     }
@@ -20,7 +31,18 @@
 
   h3 {
     margin: 9px 0 2px;
-    font-size: 42px;
+
+    @include mediaD {
+      font-size: 42px;
+    }
+
+    @include mediaT {
+      font-size: 32px;
+    }
+
+    @include mediaM {
+      font-size: 26px;
+    }
   }
 
   p {
@@ -43,16 +65,37 @@
     &:nth-child(2) {
       margin-inline-start: 12px;
     }
+
+    @include mediaTD {
+      padding: 18px 32px;
+      font-size: 20px;
+    }
+
+    @include mediaM {
+      padding: 18px 24px;
+      font-size: 16px;
+    }
   }
 
   .intro-img {
     height: 0;
     padding-bottom: 54.38%;
-    margin-top: -126px;
     z-index: -1;
 
     img {
       width: 100%;
+    }
+
+    @include media('>1367') {
+      margin-top: -126px;
+    }
+
+    @include mediaL {
+      margin-top: -70px;
+    }
+
+    @include mediaT {
+      margin-top: -20px;
     }
   }
 
@@ -71,10 +114,18 @@
 
   .partners-list {
     display: grid;
-    grid-template-columns: 84px 148px 50px 146px 94px;
     align-items: center;
-    column-gap: 62px;
     margin-top: 32px;
+
+    @include mediaD {
+      grid-template-columns: 84px 148px 50px 146px 94px;
+      column-gap: 62px;
+    }
+
+    @include mediaMT {
+      grid-template-areas: 'partner-1 partner-2' 'partner-3 partner-4';
+      row-gap: 36px;
+    }
 
     picture {
       display: block;
@@ -82,24 +133,63 @@
     }
 
     li {
-      &:first-child picture {
-        padding-bottom: 39.4%;
+      @include mediaMT {
+        display: flex;
+        align-items: center;
       }
 
-      &:nth-child(2) picture {
-        padding-bottom: 23%;
+      &:first-child {
+        picture {
+          padding-bottom: 39.4%;
+        }
+
+        @include mediaMT {
+          grid-area: partner-1;
+          justify-self: start;
+        }
       }
 
-      &:nth-child(3) picture {
-        padding-bottom: 68.1%;
+      &:nth-child(2) {
+        picture {
+          padding-bottom: 23%;
+        }
+
+        @include mediaMT {
+          grid-area: partner-2;
+          justify-self: end;
+        }
       }
 
-      &:nth-child(4) picture {
-        padding-bottom: 18.5%;
+      &:nth-child(3) {
+        picture {
+          padding-bottom: 68.1%;
+        }
+
+        @include mediaMT {
+          display: none;
+        }
       }
 
-      &:last-child picture {
-        padding-bottom: 36.2%;
+      &:nth-child(4) {
+        picture {
+          padding-bottom: 18.5%;
+        }
+
+        @include mediaMT {
+          grid-area: partner-3;
+          justify-self: start;
+        }
+      }
+
+      &:last-child {
+        picture {
+          padding-bottom: 36.2%;
+        }
+
+        @include mediaMT {
+          grid-area: partner-4;
+          justify-self: end;
+        }
       }
     }
   }

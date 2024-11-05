@@ -8,14 +8,29 @@ header {
 
 .header-grid {
   display: grid;
-  grid-template-columns: 145px 1fr 230px;
   align-items: center;
   column-gap: 10px;
   max-width: 1540px;
 
+  @include mediaD {
+    grid-template-columns: 145px 1fr 230px;
+  }
+
+  @include mediaMT {
+    grid-template-columns: 50px 1fr 50px;
+  }
+
   .logo {
     display: flex;
-    align-items: center;
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    @include mediaMT {
+      justify-content: center;
+    }
 
     img {
       width: 34px;
@@ -64,9 +79,26 @@ header {
 
   .user-info {
     justify-self: end;
+
+    @include mediaMT {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .btn:nth-child(2) {
     margin-inline-start: 14px;
+  }
+
+  .user-icon {
+    width: 32px;
+    height: 32px;
+    color: $color-white;
+    transition: color 0.2s;
+    cursor: pointer;
+
+    @include hover {
+      color: $color-grey50;
+    }
   }
 }

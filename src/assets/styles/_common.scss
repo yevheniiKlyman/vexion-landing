@@ -33,11 +33,14 @@ a {
 }
 
 body {
+  position: relative;
   font-family: $font-archivo;
   font-weight: 500;
   background-color: $color-grey95;
   color: $color-white;
   min-height: 100vh;
+  min-width: 350px;
+  overflow-y: scroll;
 }
 
 input,
@@ -56,6 +59,15 @@ ol {
 }
 
 .wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+header,
+main,
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +81,7 @@ section,
 }
 
 .page-padding {
-  padding: 0 20px;
+  padding: 0 8px;
 }
 
 .btn {
@@ -129,6 +141,30 @@ section,
   background: radial-gradient(circle at top center, rgba(89, 53, 251, 0.35) 0%, rgba(248, 134, 63, 0.1) 65%),
     linear-gradient(0deg, $color-white, $color-white);
   background-clip: text;
+}
+
+.desktop-hide {
+  @include mediaD {
+    display: none !important;
+  }
+}
+
+.tablet-hide {
+  @include mediaT {
+    display: none !important;
+  }
+}
+
+.mobile-hide {
+  @include mediaM {
+    display: none !important;
+  }
+}
+
+.mobile-tablet-hide {
+  @include mediaMT {
+    display: none !important;
+  }
 }
 
 .logo {

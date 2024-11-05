@@ -1,24 +1,57 @@
 import Swiper from 'swiper';
 import { Pagination, Thumbs } from 'swiper/modules';
+import type { SwiperOptions } from 'swiper/types';
+import resizeCallback from './utils/resize-callback';
 
-const swiperThumbs = new Swiper('#swiper2-thumbs', {
+const MOBILE_MAX_WIDTH = 767;
+let isMobile: boolean;
+let swiperThumbs: Swiper;
+let swiper: Swiper;
+
+const swiperThumbsOptions: SwiperOptions = {
   spaceBetween: 10,
   slidesPerView: 3,
   direction: 'vertical',
   watchSlidesProgress: true,
-});
+};
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const swiper = new Swiper('#swiper2', {
+const swiperOptions: SwiperOptions = {
   modules: [Pagination, Thumbs],
   slidesPerView: 1,
-  spaceBetween: 20,
+  spaceBetween: 40,
   initialSlide: 1,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
   },
-  thumbs: {
-    swiper: swiperThumbs,
-  },
+};
+
+const initializeSwiper = (width: number) => {
+  isMobile = width <= MOBILE_MAX_WIDTH;
+
+  if (!isMobile) {
+    swiperThumbs = new Swiper('#swiper2-thumbs', swiperThumbsOptions);
+    swiperOptions.thumbs = { swiper: swiperThumbs };
+  } else {
+    swiperOptions.thumbs = null;
+  }
+
+  swiper = new Swiper('#swiper2', swiperOptions);
+};
+
+initializeSwiper(window.innerWidth);
+
+resizeCallback((width) => {
+  const isMobileNew = width <= MOBILE_MAX_WIDTH;
+
+  if (isMobile !== isMobileNew) {
+    isMobile = isMobileNew;
+
+    swiperThumbs?.destroy(true, true);
+    swiper?.destroy(true, true);
+    swiperThumbs = null;
+    swiper = null;
+
+    initializeSwiper(width);
+  }
 });
