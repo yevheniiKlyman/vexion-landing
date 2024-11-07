@@ -136,9 +136,9 @@
             <p class="text-center">Our app makes your internet control smarter than you think.</p>
           </div>
           <div class="slider-container">
-            <div class="slider">
-              <div class="slider-inner">
-                <div class="slider-item">
+            <div class="swiper" id="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
                   <div class="img-container">
                     <picture>
                       <source srcset="assets/images/app-info-1/01_x2.webp 2x, assets/images/app-info-1/01_x1.webp" media="(min-width: 1024px)" type="image/webp" />
@@ -159,7 +159,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="slider-item">
+                <div class="swiper-slide">
                   <div class="img-container">
                     <picture>
                       <source srcset="assets/images/app-info-1/02_x2.webp 2x, assets/images/app-info-1/02_x1.webp" type="image/webp" />
@@ -174,7 +174,7 @@
                   <h4 class="title">Control your internet</h4>
                   <p class="text">Control the connection status of all connected devices with the app.</p>
                 </div>
-                <div class="slider-item">
+                <div class="swiper-slide">
                   <div class="img-container">
                     <picture>
                       <source srcset="assets/images/app-info-1/03_x2.webp 2x, assets/images/app-info-1/03_x1.webp" type="image/webp" />
@@ -191,7 +191,7 @@
                     <p class="text">Monitor how much transfer you have used and the download and upload speeds.</p>
                   </div>
                 </div>
-                <div class="slider-item">
+                <div class="swiper-slide">
                   <div class="img-container">
                     <picture>
                       <source srcset="assets/images/app-info-1/04_x2.webp 2x, assets/images/app-info-1/04_x1.webp" type="image/webp" />
@@ -208,7 +208,7 @@
                     <p class="text">Test and graph your Internet latency across the world in seconds.</p>
                   </div>
                 </div>
-                <div class="slider-item">
+                <div class="swiper-slide">
                   <div class="img-container">
                     <picture>
                       <source srcset="assets/images/app-info-1/05_x2.webp 2x, assets/images/app-info-1/05_x1.webp" type="image/webp" />
@@ -224,12 +224,15 @@
                   <p class="text">Measure the speed and quality of your Internet connection using our app.</p>
                 </div>
               </div>
+              <div class="swiper-button-next" id="swiper-button-next"></div>
+              <div class="swiper-button-prev" id="swiper-button-prev"></div>
             </div>
+            <div class="swiper-pagination" id="swiper-pagination"></div>
           </div>
         </section>
         <section class="app-info-2">
           <div class="slider-container">
-            <div class="swiper2" id="swiper2">
+            <div class="swiper" id="swiper2">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="text-block">
@@ -295,8 +298,10 @@
                   </div>
                 </div>
               </div>
+              <div class="swiper-button-next" id="swiper-button-next2"></div>
+              <div class="swiper-button-prev" id="swiper-button-prev2"></div>
             </div>
-            <div class="swiper2-thumbs" id="swiper2-thumbs">
+            <div class="swiper-thumbs" id="swiper2-thumbs">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <h5 class="thumb-title">Check the latency</h5>
@@ -312,7 +317,7 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination" id="swiper-pagination2"></div>
           </div>
         </section>
         <section class="img-txt-info">

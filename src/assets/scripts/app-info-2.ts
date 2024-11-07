@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Pagination, Thumbs } from 'swiper/modules';
+import { Pagination, Thumbs, Navigation } from 'swiper/modules';
 import type { SwiperOptions } from 'swiper/types';
 import resizeCallback from './utils/resize-callback';
 
@@ -16,12 +16,12 @@ const swiperThumbsOptions: SwiperOptions = {
 };
 
 const swiperOptions: SwiperOptions = {
-  modules: [Pagination, Thumbs],
+  modules: [Pagination, Thumbs, Navigation],
   slidesPerView: 1,
   spaceBetween: 40,
   initialSlide: 1,
   pagination: {
-    el: '.swiper-pagination',
+    el: '#swiper-pagination2',
     clickable: true,
   },
 };
@@ -32,8 +32,13 @@ const initializeSwiper = (width: number) => {
   if (!isMobile) {
     swiperThumbs = new Swiper('#swiper2-thumbs', swiperThumbsOptions);
     swiperOptions.thumbs = { swiper: swiperThumbs };
+    swiperOptions.navigation = null;
   } else {
     swiperOptions.thumbs = null;
+    swiperOptions.navigation = {
+      nextEl: '#swiper-button-next2',
+      prevEl: '#swiper-button-prev2',
+    };
   }
 
   swiper = new Swiper('#swiper2', swiperOptions);
