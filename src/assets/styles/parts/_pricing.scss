@@ -9,6 +9,10 @@
     flex-direction: column;
     align-items: center;
     max-width: 700px;
+
+    @include mediaM {
+      padding: 0 8px;
+    }
   }
 
   .title-block {
@@ -31,19 +35,40 @@
   }
 
   .pricing-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 32px;
     width: 100%;
     margin-top: 80px;
+    
+    @include mediaTD {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 32px;
+    }
+
+    @include mediaM {
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+    }
   }
 
   .pricing-card {
     padding: 24px;
 
+    @include mediaM {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 24px;
+      @include faded-border(24px);
+    }
+
     .btn {
       width: 100%;
       text-align: center;
+
+      @include mediaM {
+        order: 1;
+      }
     }
 
     &.recomended {
@@ -61,12 +86,19 @@
   }
 
   .info {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: start;
 
     .title {
-      font-size: 18px;
+      @include mediaTD {
+        font-size: 18px;
+      }
+
+      @include mediaM {
+        font-size: 20px;
+      }
     }
   }
 
@@ -78,20 +110,41 @@
     margin: 3px 0 15px;
     font-size: 48px;
 
+    @include mediaM {
+      position: absolute;
+      top: -18px;
+      right: 0;
+    }
+
     small {
       font-size: 32px;
     }
   }
 
   .annual-price {
-    margin: 24px 0 11px;
     font-size: 14px;
     color: $color-grey50;
+    
+    @include mediaTD {
+      margin: 24px 0 11px;
+    }
+    
+    @include mediaM {
+      margin: 18px 0 5px;
+    }
   }
 
   .options {
     position: relative;
     padding-top: 20px;
+
+    @include mediaM {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      column-gap: 10px;
+      margin-bottom: 5px;
+    }
 
     &::before {
       content: '';
@@ -121,9 +174,13 @@
   }
 
   .img-container {
-    margin-top: -314px;
+    margin-top: -19.63%;
     padding-bottom: 45.314%;
     height: 0;
     z-index: -1;
+
+    img {
+      width: 100%;
+    }
   }
 }

@@ -173,3 +173,10 @@ section,
     box-shadow: 0 6.64px 33.18px 0 rgba(160, 151, 180, 0.4);
   }
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  @include mediaTD {
+    display: none !important;
+  }
+}

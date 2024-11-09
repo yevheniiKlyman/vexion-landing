@@ -4,20 +4,54 @@
 
   .container {
     max-width: 1204px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 36px;
+    
+    @include mediaTD {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+
+    @include mediaD {
+      column-gap: 36px;
+    }
+
+    @include mediaT {
+      column-gap: 61px;
+    }
+
+    @include mediaM {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .img-container {
     padding-bottom: 100.35%;
     height: 0;
+
+    @include mediaM {
+      margin: 0 20px;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 
   .text-info {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    
+    @include mediaTD {
+      align-items: start;
+    }
+
+    @include mediaM {
+      margin-top: 40px;
+      align-items: center;
+      text-align: center;
+    }
 
     p {
       font-size: 16px;
@@ -32,7 +66,14 @@
 
   .title {
     margin: 15px 0 24px;
-    font-size: 48px;
+
+    @include mediaD {
+      font-size: 48px;
+    }
+
+    @include mediaT {
+      font-size: 34px;
+    }
   }
 
   .buttons {
@@ -47,7 +88,9 @@
     margin-top: 150px;
 
     .text-info {
-      margin: 94px 0 0 84px;
+      @include mediaD {
+        margin: -74px 0 0 88px;
+      }
     }
   }
 
@@ -55,7 +98,13 @@
     margin-top: 118px;
 
     .text-info {
-      margin: 94px 0 0 90px;
+      @include mediaD {
+        margin: -20px 0 0 90px;
+      }
+
+      @include mediaM {
+        order: 1;
+      }
     }
   }
 }

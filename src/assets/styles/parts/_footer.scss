@@ -1,5 +1,7 @@
 footer {
-  margin-top: -30px;
+  @include mediaTD {
+    margin-top: -30px;
+  }
 
   .container {
     display: flex;
@@ -27,22 +29,51 @@ footer {
 
   .f-cols {
     display: grid;
-    grid-template-columns: 1fr 166px 1fr;
     column-gap: 60px;
     width: 100%;
-    margin-top: 80px;
     align-items: center;
+    
+    @include mediaTD {
+      grid-template-columns: 1fr 166px 1fr;
+      margin-top: 80px;
+    }
+
+    @include mediaM {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 60px;
+    }
   }
 
   .f-col {
     display: flex;
     justify-content: center;
 
+    &:nth-child(2) {
+      @include mediaM {
+        display: none;
+      }
+    }
+
     ul {
-      display: grid;
-      grid-template-columns: repeat(4, auto);
-      align-items: center;
-      column-gap: 40px;
+      @include media('>1367') {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        column-gap: 40px;
+      }
+
+      @include mediaL {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        gap: 40px;
+      }
+
+      @include mediaMT {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+      }
     }
 
     li {

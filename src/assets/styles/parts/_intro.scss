@@ -79,11 +79,14 @@
 
   .intro-img {
     height: 0;
-    padding-bottom: 54.38%;
     z-index: -1;
 
     img {
       width: 100%;
+    }
+
+    @include mediaTD {
+      padding-bottom: 54.38%;
     }
 
     @include media('>1367') {
@@ -96,6 +99,11 @@
 
     @include mediaT {
       margin-top: -20px;
+    }
+
+    @include mediaM {
+      padding-bottom: 58.67%;
+      margin-top: 40px;
     }
   }
 

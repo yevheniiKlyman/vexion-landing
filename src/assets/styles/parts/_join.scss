@@ -10,21 +10,49 @@
 
   .content {
     position: absolute;
-    top: 47px;
+    top: 50%;
+    transform: translateY(-50%);
     inset-inline: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0 40px;
+
+    @include mediaTD {
+      justify-content: space-between;
+    }
+
+    @include mediaM {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   .title {
-    font-size: 48px;
+    @include mediaTD {
+      font-size: 48px;
+    }
+
+    @include mediaM {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+
+      br {
+        display: none;
+      }
+    }
   }
 
   .btn {
-    font-size: 20px;
     padding: 16px 33px;
+    
+    @include mediaTD {
+      font-size: 20px;
+    }
+    
+    @include mediaM {
+      font-size: 16px;
+    }
   }
 
   .img-container {
@@ -32,6 +60,10 @@
     overflow: hidden;
     padding-bottom: 21.2%;
     height: 0;
+
+    @include mediaM {
+      min-height: 200px;
+    }
   }
 
   .btn-dark {

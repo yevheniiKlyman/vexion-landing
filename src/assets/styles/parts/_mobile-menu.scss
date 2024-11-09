@@ -68,7 +68,14 @@
 
   @include faded-border {
     padding: 1.2px 1.2px 0 0;
+    z-index: -1;
   };
+
+  .nav-item {
+    + .nav-item {
+      margin-top: 15px;
+    }
+  }
 }
 
 .mobile-menu-active {

@@ -32,7 +32,7 @@ const initializeSwiper = (width: number) => {
   if (!isMobile) {
     swiperThumbs = new Swiper('#swiper2-thumbs', swiperThumbsOptions);
     swiperOptions.thumbs = { swiper: swiperThumbs };
-    swiperOptions.navigation = null;
+    swiperOptions.navigation = false;
   } else {
     swiperOptions.thumbs = null;
     swiperOptions.navigation = {
